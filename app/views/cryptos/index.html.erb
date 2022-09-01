@@ -1,0 +1,24 @@
+<div data-controller="dynamic">
+  <div>
+    <form data-action="submit->dynamic#data">
+      <input data-dynamic-target="input" type="text" >
+      <button type="submit">enviar</button>
+    </form>
+  </div>
+  <div>
+    <% @bitcoins.each do |bitcoin| %>
+      <div key=<%= bitcoin.id %>>
+        <div>
+          <h3><%= bitcoin.hash %></h3>
+          <h3><%= bitcoin.prev_block %></h3>
+          <h3><%= bitcoin.block_index %></h3>
+          <h3><%= bitcoin.time %></h3>
+          <h3><%= bitcoin.bits %></h3>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <div data-dynamic-target="info">
+
+  </div>
+</div>
